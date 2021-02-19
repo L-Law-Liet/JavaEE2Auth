@@ -39,7 +39,7 @@
             %>
         </table>
         <div class="d-flex justify-content-center">
-            <a class="btn btn-primary" href="index.jsp">Go to Home Page</a>
+            <a class="btn btn-primary" href="index">Go to Home Page</a>
         </div>
     </div>
 </div>

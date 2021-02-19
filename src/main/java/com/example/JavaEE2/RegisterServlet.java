@@ -5,6 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +46,9 @@ public class RegisterServlet extends HttpServlet {
             req.getRequestDispatcher("/register.jsp").forward(req, resp);
         }
         req.setAttribute("isNew", true);
-
+        HttpSession session = req.getSession();
+        session.setAttribute("email", email);
+        session.setMaxInactiveInterval(300);
         req.getRequestDispatcher("/cabinet.jsp").forward(req, resp);
     }
 }
