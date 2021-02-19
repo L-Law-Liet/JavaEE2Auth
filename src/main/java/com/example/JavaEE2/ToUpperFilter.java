@@ -17,13 +17,6 @@ public class ToUpperFilter implements Filter {
 
         if ("POST".equals(((HttpServletRequest) servletRequest).getMethod())) {
             servletRequest = new ToUpperReq((HttpServletRequest) servletRequest);
-//            newResponse = new ToUpperResp((HttpServletResponse) newResponse);
-//            if (servletRequest.getAttribute("name") != null) {
-//                String name = servletRequest.getParameter("name");
-//                servletRequest.setAttribute("name", name.toUpperCase());
-//            }
-//            String email = servletRequest.getParameter("email");
-//            servletRequest.setAttribute("email", email.toUpperCase());
         }
         filterChain.doFilter(servletRequest, servletResponse);
     }
